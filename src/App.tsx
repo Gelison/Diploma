@@ -1,31 +1,28 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import { Main } from './pages/MainPage/mainPage';
-// import { About } from './pages/Aboutpage';
-// import { Blogpage } from './pages/Blogpage';
-// import { Notfoundpage } from './pages/Notfoundpage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+// import { Provider } from 'react-redux';
+// import { store } from './redux/store';
+import { Posts } from './pages/Posts';
+import { EmailActivation } from './pages/EmailActivation';
 
 function App() {
   return (
-    <>
-      <header>
-        <a href='/'>Home</a>
-        <a href='/posts'>Blog</a>
-        <a href='/about'>About</a>
-        <Link to='/'>Home</Link>
-        <Link to='/posts'>Blog</Link>
-        <Link to='/about'>About</Link>
-      </header>
-      <div>
-        <h1>Get started with React-Router 6</h1>
-      </div>
+    // <Provider store={store}>
+    <BrowserRouter>
       <Routes>
-        {/* <Route path='/' element={<Main />} /> */}
-        {/* <Route path='/about' element={<About />} />
-        <Route path='/posts' element={<Blogpage />} />
-        <Route path='*' element={<Notfoundpage />} /> */}
+        <Route path='/'>
+          <Route index element={<Home />} />
+          <Route path='posts'>
+            <Route index element={<Posts />} />
+            <Route path=':postId' element={<Home />} />
+          </Route>
+        </Route>
+        <Route path='/activate/:uid/:token' element={<EmailActivation />} />
+        <Route path='*' element={<div>404</div>} />
       </Routes>
-    </>
+    </BrowserRouter>
+    // </Provider>
   );
 }
 

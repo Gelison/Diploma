@@ -14,6 +14,9 @@ export default {
         yellow: '#F3A608',
         green: '#00A340',
       },
+      content: {
+        logo: "url('./src/assets/pixema.svg')",
+      },
     },
   },
   plugins: [],
