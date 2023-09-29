@@ -1,4 +1,5 @@
-import { NavBar } from '../components/navbar/navbar';
+import { Layout } from '../components/layout/layout';
+
 export const Home = () => {
-  return <NavBar />;
+  return <div></div>;
 };
