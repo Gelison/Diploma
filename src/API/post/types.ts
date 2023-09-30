@@ -1,4 +1,4 @@
-export interface Post {
+export interface Movie {
   Title: string;
   Year: number;
   Rated: string;

@@ -1,23 +1,35 @@
 // import { Link } from 'react-router-dom';
 
-import { logoLightIcon } from '../../assets/index';
-import AVATAR from '../../assets/icons/Group 22.svg';
+import { logoLightIcon, Profil, SearchIcon } from '../../assets/index';
 import { User } from '../userName/userName';
 
 export const Head = () => {
   return (
-    <div>
-      <div>
-        <img src={logoLightIcon} alt='stiff' />
+    <div className=' flex  '>
+      <div className='flex-none mb-14  '>
+        <img src={logoLightIcon} alt='' />
       </div>
-      <div>
-        <div>
-          <img src={AVATAR} alt='' />
+      <form className=' grow '>
+        <div className='flex justify-center h-10  '>
+          <input
+            className=' w-3/4 rounded-xl border-2 border-primary'
+            type='search'
+            name='search'
+            placeholder='Search'
+            autoComplete='off'
+          />
+          <img src={SearchIcon} alt='' className=' h-6 w-6' />
+        </div>
+      </form>
+      <div className=' flex-none'>
+        <div className=' flex '>
+          <img src={Profil} alt='' className=' h-12 w-12' />
           Guest
-          <User userName='Guest' />
+          <div className='content-center flex'>
+            <User userName='Guest' />
+          </div>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };

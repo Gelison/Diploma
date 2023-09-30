@@ -1,5 +1,5 @@
-import { Layout } from '../components/layout/layout';
+// import { Layout } from '../components/layout/layout';
 
 export const Home = () => {
-  return <div></div>;
+  return <div>{/* <Layout /> */}</div>;
 };

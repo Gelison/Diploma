@@ -4,7 +4,7 @@ import { Home } from './pages/Home';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Layout } from './components/layout/layout';
 
-import { EmailActivation } from './pages/EmailActivation';
+// import { EmailActivation } from './pages/EmailActivation';
 import { Trends } from './pages/Trends';
 import { Settings } from './pages/Settings';
 import { Favorites } from './pages/Favorites';

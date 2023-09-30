@@ -1,3 +1,4 @@
+// import { React } from 'react';
 import logoIcon from './icons/logo.svg';
 import logoLightIcon from './icons/logo-light.svg';
 import backgroundAuth from './background/background.png';
@@ -13,6 +14,7 @@ import BurgerIcon from './icons/burger.svg';
 import LeftArrowIcon from './icons/left-arrow.svg';
 import RightArrowIcon from './icons/right-arrow.svg';
 import FavoritesIsEmptyIcon from './icons/favorites-empty.svg';
+import Profil from './icons/profil.svg';
 
 export {
   HomeIcon,
@@ -30,4 +32,5 @@ export {
   backgroundAuth,
   notFound,
   trendsIcon,
+  Profil,
 };
