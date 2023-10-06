@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Movie } from './types';
+// import { Movie } from './types';
 
 export const getFilms = async (page: number) => {
   const response = await axios.get(

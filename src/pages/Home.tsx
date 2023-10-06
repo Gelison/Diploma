@@ -1,11 +1,18 @@
-// import { Layout } from '../components/layout/layout';
 import { useState, useEffect } from 'react';
 import { getFilms } from '../API/film/getFilms';
-import { Button } from '../components/button/button';
-// import { getFilmPoster } from '../API/film/getFilmPoster';
+import { ShowMoreButton } from '../components/showMoreButton/showMoreButton';
+import { notFoundPoster } from '../assets';
+
+interface Movie {
+  Poster: string;
+  Title: string;
+  Type: string;
+  Year: string;
+  imdbID: string;
+}
 
 export const Home = () => {
-  const [films, setFilms] = useState([]);
+  const [films, setFilms] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const onClick = () => {
@@ -20,8 +27,7 @@ export const Home = () => {
     } else {
       setFilms(response.Search);
     }
-    // const poster = await getFilmPoster(response.Search[0].imdbID);
-    // console.log(poster);
+
     setLoading(false);
   };
   useEffect(() => {
@@ -33,10 +39,26 @@ export const Home = () => {
       fetchData();
     }
   }, [page]);
-  console.log(films, loading);
+
   return (
-    <div>
-      <Button text={'Show more'} onClick={onClick} />
+    <div className='-mt-64 pl-80'>
+      <div className=' flex flex-wrap '>
+        {films.map((movie) => (
+          <div key={movie.imdbID} className=' ml-3'>
+            <img
+              src={movie.Poster}
+              alt=''
+              className=' h-80 w-60 rounded-2xl cursor-pointer'
+            />
+            <h2 className='w-60 text-base font-bold'>{movie.Title}</h2>
+            <p>ganres</p>
+          </div>
+        ))}
+      </div>
+
+      <div className=' flex justify-center'>
+        <ShowMoreButton text='Show More' onClick={onClick} />
+      </div>
     </div>
   );
 };
