@@ -1,4 +1,4 @@
-export interface Movie {
+export type Movie = {
   Title: string;
   Year: number;
   Rated: string;
@@ -37,4 +37,12 @@ export interface Movie {
   Production: string;
   Website: string;
   Response: boolean;
-}
+};
+
+export type Films = {
+  Poster: string;
+  Title: string;
+  Type: string;
+  Year: string;
+  imdbID: string;
+};

@@ -3,11 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Layout } from './components/layout/layout';
+// import { ThemeProvider } from './providers/ThemeProvider';
 
 // import { EmailActivation } from './pages/EmailActivation';
 import { Trends } from './pages/Trends';
 import { Settings } from './pages/Settings';
 import { Favorites } from './pages/Favorites';
+import { SingleFilm } from './pages/SingleFilm';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
             <Route index element={<Settings />} />
           </Route>
         </Route>
+        <Route path='film/:imdbID' element={<SingleFilm />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
