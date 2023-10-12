@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Button } from '../components/button/button';
-import { Switch } from '../components/switch/switch';
+import { Switch } from '../components/Toggle/Toggle';
 import { useTheme } from '../hooks/useTheme';
 // import {} from '../../src/assets/index';
 
@@ -48,7 +48,7 @@ export const Settings = () => {
           <div className=' bg-dark'>
             <p>Dark</p>
             <p>Use dark theme</p>
-            {/* <Switch onClick={} /> */}
+            <Switch onClick={useTheme} />
           </div>
         </div>
       </div>

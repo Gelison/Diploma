@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getFilms } from '../API/film/getFilms';
 import { ShowMoreButton } from '../components/showMoreButton/showMoreButton';
-import { Link } from 'react-router-dom';
+
+import { getFilmInfo } from '../API/film/getFilmPoster';
+
 // import { notFoundPoster } from '../assets';
 import { Films } from '../API/film/types';
 
@@ -33,8 +36,6 @@ export const Home = () => {
       fetchData();
     }
   }, [page]);
-
-  console.log(films);
 
   return (
     <div className='-mt-64 pl-80'>

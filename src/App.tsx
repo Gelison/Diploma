@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Layout } from './components/layout/layout';
-// import { ThemeProvider } from './providers/ThemeProvider';
 
 // import { EmailActivation } from './pages/EmailActivation';
 import { Trends } from './pages/Trends';
@@ -17,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path='film/:imdbID' element={<SingleFilm />} />
 
           <Route path='trends'>
             <Route index element={<Trends />} />
@@ -28,7 +28,6 @@ function App() {
             <Route index element={<Settings />} />
           </Route>
         </Route>
-        <Route path='film/:imdbID' element={<SingleFilm />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
