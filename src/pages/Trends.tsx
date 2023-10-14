@@ -1,3 +1,3 @@
 export const Trends = () => {
-  return <div>Trends</div>;
+  return <div className=''>Trends</div>;
 };

@@ -4,6 +4,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        myimg: 'url(./assets/background/background.png)',
+      },
       colors: {
         primary: '#7B61FF',
         primary2: '#917CFF',

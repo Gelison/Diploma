@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { getFilms } from '../API/film/getFilms';
 import { ShowMoreButton } from '../components/showMoreButton/showMoreButton';
 
-import { getFilmInfo } from '../API/film/getFilmPoster';
-
-// import { notFoundPoster } from '../assets';
 import { Films } from '../API/film/types';
 
 export const Home = () => {
@@ -38,23 +35,29 @@ export const Home = () => {
   }, [page]);
 
   return (
-    <div className='-mt-64 pl-80'>
-      <div className=' flex flex-wrap '>
-        {films.map((film) => (
-          <Link key={film.imdbID} to={`/film/${film.imdbID}`} className=' ml-3'>
-            <img
-              src={film.Poster}
-              alt=''
-              className=' h-80 w-60 rounded-2xl cursor-pointer'
-            />
-            <h2 className='w-60 text-base font-bold'>{film.Title}</h2>
-            <p>ganres</p>
-          </Link>
-        ))}
-      </div>
+    <div className=''>
+      <div className='-mt-64 pl-80 '>
+        <div className=' flex flex-wrap '>
+          {films.map((film) => (
+            <Link
+              key={film.imdbID}
+              to={`/film/${film.imdbID}`}
+              className=' ml-3'
+            >
+              <img
+                src={film.Poster}
+                alt=''
+                className=' h-80 w-60 rounded-2xl cursor-pointer'
+              />
+              <h2 className='w-60 text-base font-bold'>{film.Title}</h2>
+              <p>ganres</p>
+            </Link>
+          ))}
+        </div>
 
-      <div className=' flex justify-center'>
-        <ShowMoreButton text='Show More' onClick={onClick} />
+        <div className=' flex justify-center'>
+          <ShowMoreButton text='Show More' onClick={onClick} />
+        </div>
       </div>
     </div>
   );

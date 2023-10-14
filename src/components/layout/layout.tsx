@@ -5,7 +5,7 @@ import { Head } from '../head/head';
 const Layout = () => {
   return (
     <>
-      <div className=' mx-14 my-10'>
+      <div className='mx-14 my-10'>
         <div>
           <Head />
         </div>

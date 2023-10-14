@@ -14,12 +14,12 @@ export const Settings = () => {
         <h3>Profil</h3>
         <div className=' bg-dark'>
           <div>
-            <p>Name</p>
+            <p className=' text-secondary'>Name</p>
             <input type='text' className=' bg-graphite' />
           </div>
 
           <div>
-            <p>Email</p>
+            <p className=' text-secondary'>Email</p>
             <input type='text' className=' bg-graphite' />
           </div>
         </div>
@@ -28,16 +28,16 @@ export const Settings = () => {
         <h3>Pasword</h3>
         <div className=' bg-dark'>
           <div>
-            <p>Password</p>
+            <p className=' text-secondary'>Password</p>
             <input type='password' className=' bg-graphite' />
           </div>
 
           <div>
-            <p>New password</p>
+            <p className=' text-secondary'>New password</p>
             <input type='password' className=' bg-graphite' />
           </div>
           <div>
-            <p>Confirm password</p>
+            <p className=' text-secondary'>Confirm password</p>
             <input type='password' className=' bg-graphite' />
           </div>
         </div>
@@ -46,8 +46,8 @@ export const Settings = () => {
         <div>
           <h3>Color mode</h3>
           <div className=' bg-dark'>
-            <p>Dark</p>
-            <p>Use dark theme</p>
+            <p className=' text-secondary'>Dark</p>
+            <p className=' text-secondary'>Use dark theme</p>
             <Switch onClick={useTheme} />
           </div>
         </div>
