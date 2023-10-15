@@ -1,7 +1,7 @@
 type Button = {
   text: string;
   disabled?: boolean;
-  onClick: (...args: any) => any;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 export const Button = ({ text, disabled, onClick }: Button) => {

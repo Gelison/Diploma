@@ -1,5 +1,5 @@
 type ModeButton = {
-  onClick: (...args: any) => any;
+  onClick: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 };
 
 export const Switch = ({ onClick }: ModeButton) => {

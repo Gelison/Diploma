@@ -15,7 +15,7 @@ export const Search = () => {
       <form>
         <div className='flex justify-center h-10  '>
           <input
-            className=' w-3/4 rounded-lg border-2 border-primary'
+            className=' w-3/4 rounded-lg border-2 border-primary dark:bg-graphite'
             type='search'
             name='search'
             placeholder='Search'

@@ -1,7 +1,7 @@
 type Button = {
   text: string;
   disabled?: boolean;
-  onClick: (...args: any) => any;
+  onClick: () => void;
 };
 
 export const ShowMoreButton = ({ text, disabled, onClick }: Button) => {
