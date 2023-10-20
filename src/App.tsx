@@ -7,20 +7,18 @@ import { Trends } from './pages/Trends';
 import { Settings } from './pages/Settings';
 import { Favorites } from './pages/Favorites';
 import { SingleFilm } from './pages/SingleFilm';
-import { SingInPage } from './pages/SingInPage';
-import { SingUpPage } from './pages/SingUpPage';
-import { ResetPasswordPage } from './pages/ResetPasswordPage';
+import { SingInPage } from './pages/auth/SingInPage';
+import { SingUpPage } from './pages/auth/SingUpPage';
+import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
 
 import { NotFoundPage } from './pages/NotFoundPage';
+import { PrivateRoute } from './uilse/router/PrivateRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='film/:imdbID' element={<SingleFilm />} />
-
+        <Route element={<PrivateRoute />}>
           <Route path='trends'>
             <Route index element={<Trends />} />
           </Route>
@@ -30,6 +28,10 @@ function App() {
           <Route path='settings'>
             <Route index element={<Settings />} />
           </Route>
+        </Route>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='film/:imdbID' element={<SingleFilm />} />
         </Route>
         <Route path='singin' element={<SingInPage />} />
         <Route path='/resetpassword' element={<ResetPasswordPage />} />

@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFilmInfo } from '../API/film/getFilmPoster';
-// import { Route } from 'react-router-dom';
 import { Movie } from '../API/film/types';
+import { FavoriteButton } from '../components/favoriteButton/favoriteButton';
 
 export const SingleFilm = (): JSX.Element => {
   const { imdbID } = useParams<{ imdbID?: string }>();
-
-  if (!imdbID) {
-    return <div>Invalid ID</div>;
-  }
 
   const [film, setFilm] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   const fetchData = async (): Promise<void> => {
     setLoading(true);
-    const response = await getFilmInfo(imdbID);
+    const response = await getFilmInfo(imdbID as string);
     setFilm(response);
     setLoading(false);
   };
+
+  if (!imdbID) {
+    return <div>Invalid ID</div>;
+  }
 
   useEffect(() => {
     fetchData();
@@ -41,7 +41,7 @@ export const SingleFilm = (): JSX.Element => {
   return (
     <div>
       <img src={film?.Poster} alt={film?.Title} />
-
+      <FavoriteButton onClick={console.log} />
       <p>{film?.Genre}</p>
       <h1>{film?.Title}</h1>
       <div>

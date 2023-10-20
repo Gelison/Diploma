@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Button } from '../components/button/button';
 import { Switch } from '../components/Toggle/Toggle';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../uilse/hooks/useTheme';
 // import {} from '../../src/assets/index';
 
 export const Settings = () => {
@@ -14,13 +14,17 @@ export const Settings = () => {
         <h3>Profil</h3>
         <div className=' bg-dark'>
           <div>
-            <p className=' text-secondary'>Name</p>
-            <input type='text' className=' bg-graphite' />
+            <form action=''>
+              <p className=' text-secondary'>Name</p>
+              <input type='text' className=' bg-graphite' />
+            </form>
           </div>
 
           <div>
-            <p className=' text-secondary'>Email</p>
-            <input type='text' className=' bg-graphite' />
+            <form action=''>
+              <p className=' text-secondary'>Email</p>
+              <input type='text' className=' bg-graphite' />
+            </form>
           </div>
         </div>
       </div>
@@ -28,17 +32,23 @@ export const Settings = () => {
         <h3>Pasword</h3>
         <div className=' bg-dark'>
           <div>
-            <p className=' text-secondary'>Password</p>
-            <input type='password' className=' bg-graphite' />
+            <form action=''>
+              <p className=' text-secondary'>Password</p>
+              <input type='password' className=' bg-graphite' />
+            </form>
           </div>
 
           <div>
-            <p className=' text-secondary'>New password</p>
-            <input type='password' className=' bg-graphite' />
+            <form action=''>
+              <p className=' text-secondary'>New password</p>
+              <input type='password' className=' bg-graphite' />
+            </form>
           </div>
           <div>
-            <p className=' text-secondary'>Confirm password</p>
-            <input type='password' className=' bg-graphite' />
+            <form action=''>
+              <p className=' text-secondary'>Confirm password</p>
+              <input type='password' className=' bg-graphite' />
+            </form>
           </div>
         </div>
       </div>
