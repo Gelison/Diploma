@@ -2,11 +2,10 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getFilms } from '../API/film/getFilms';
 import { ShowMoreButton } from '../components/showMoreButton/showMoreButton';
-
-import { Films } from '../API/film/types';
+import { IMovieAPI } from '../types/film/types';
 
 export const Home = () => {
-  const [films, setFilms] = useState<Films[]>([]);
+  const [films, setFilms] = useState<IMovieAPI[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const onClick = () => {
@@ -56,7 +55,11 @@ export const Home = () => {
         </div>
 
         <div className=' flex justify-center'>
-          <ShowMoreButton text='Show More' onClick={onClick} />
+          <ShowMoreButton
+            text='Show More'
+            onClick={onClick}
+            loading={loading}
+          />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-export const useTheme = () => {
-  document.documentElement.classList.toggle('dark');
+// export const useTheme = () => {
+//   document.documentElement.classList.toggle('dark');
 
-  return { useTheme };
-};
+//   return { useTheme };
+// };

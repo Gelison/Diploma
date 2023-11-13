@@ -16,6 +16,7 @@ import RightArrowIcon from './icons/right-arrow.svg';
 import FavoritesIsEmptyIcon from './icons/favorites-empty.svg';
 import Profil from './icons/profil.svg';
 import notFoundPoster from './background/notfoundPoster.png';
+import notFoundImage from './background/notFoundImage.png';
 
 export {
   HomeIcon,
@@ -35,4 +36,5 @@ export {
   trendsIcon,
   Profil,
   notFoundPoster,
+  notFoundImage,
 };

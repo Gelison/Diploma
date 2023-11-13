@@ -1,20 +1,26 @@
 // // import { Link } from 'react-router-dom';
-// import { IPropsLogin } from '../../types/auth/type';
+// import { IPropsRegister } from '../../types/auth/type';
 // import { Button } from '../../components/button/button';
 // import { logoIcon } from '../../assets/index';
 // import { useFormik } from 'formik';
-// import { LoginSchema } from '../../uilse/yap/yap';
+// import { RegisterSchema } from '../../uilse/yap/yap';
 
-// export const SingInPage: React.FC<IPropsLogin> = ({
+// export const SingUpPage: React.FC<IPropsRegister> = ({
 //   navigate,
-//   initialValues,
 //   loading,
 //   onSubmit,
-// }: IPropsLogin): JSX.Element => {
+// }: IPropsRegister): JSX.Element => {
+//   const initialValues = {
+//     username: '',
+//     email: '',
+//     password: '',
+//     confirmPassword: '',
+//   };
+
 //   const formik = useFormik({
 //     initialValues,
 //     onSubmit,
-//     validationSchema: LoginSchema,
+//     validationSchema: RegisterSchema,
 //     validateOnBlur: false,
 //   });
 
@@ -29,7 +35,22 @@
 //         <form onSubmit={handleSubmit}>
 //           <div className=' w-[474px] h-[440px] bg-dark rounded-lg flex items-center mx-auto my-10'>
 //             <div className=' p-5 mx-auto'>
-//               <h3>Sing In</h3>
+//               <h3>Sing up</h3>
+
+//               <div>
+//                 <p>Name</p>
+//                 <input
+//                   className=' text-black'
+//                   type='text'
+//                   name='text'
+//                   onChange={handleChange}
+//                   onBlur={handleBlur}
+//                   value={values.username}
+//                 />
+//                 {errors.username && touched.username && (
+//                   <span>{errors.username}</span>
+//                 )}
+//               </div>
 
 //               <div>
 //                 <p>Email</p>
@@ -57,18 +78,32 @@
 //                   <span>{errors.password}</span>
 //                 )}
 //               </div>
+
 //               <div>
-//                 <Link to='/resetpassword'>Forgot password?</Link>
+//                 <p>Confirm password</p>
+//                 <input
+//                   className=' text-black'
+//                   type='Password'
+//                   name='confirmPassword'
+//                   onChange={handleChange}
+//                   onBlur={handleBlur}
+//                   value={values.confirmPassword}
+//                 />
+//                 {errors.confirmPassword && touched.confirmPassword && (
+//                   <span>{errors.confirmPassword}</span>
+//                 )}
 //               </div>
 
-//               <Button text='Sing in' disabled={false} onClick={handleSubmit} />
+//               <div></div>
+
+//               <Button text='Sing up' disabled={false} onClick={handleSubmit} />
 //               <div>
-//                 Don’t have an account?
+//                 Already have an account?
 //                 <span
 //                   className=' text-primary hover:text-primary2 cursor-pointer'
-//                   onClick={() => navigate('/singup')}
+//                   onClick={() => navigate('/singin')}
 //                 >
-//                   Sign Up
+//                   Sign In
 //                 </span>
 //               </div>
 //             </div>

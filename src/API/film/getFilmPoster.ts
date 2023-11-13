@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { Movie } from './types';
 
 export const getFilmInfo = async (id: string) => {
   const response = await axios.get(

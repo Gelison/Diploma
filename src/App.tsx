@@ -3,44 +3,53 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout/layout';
 
 import { Home } from './pages/Home';
-import { Trends } from './pages/Trends';
+import { TrendsPage } from './pages/Trends';
 import { Settings } from './pages/Settings';
-import { Favorites } from './pages/Favorites';
+import { Favourites } from './pages/Favorites';
 import { SingleFilm } from './pages/SingleFilm';
-import { SingInPage } from './pages/auth/SingInPage';
-import { SingUpPage } from './pages/auth/SingUpPage';
-import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
+import { ResetPassword } from './pages/auth/ResetPasswordPage';
 
 import { NotFoundPage } from './pages/NotFoundPage';
-import { PrivateRoute } from './uilse/router/PrivateRoute';
+import { ThemeContext, useInitThemeContext } from './uilse/context/ThemContext';
+import { UserContext, useInitUserContext } from './uilse/context/userContext';
+
+import { SigninForm } from './pages/auth/singIn';
+import { SignupForm } from './pages/auth/singUp';
 
 function App() {
+  const theme = useInitThemeContext();
+  const user = useInitUserContext();
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<PrivateRoute />}>
-          <Route path='trends'>
-            <Route index element={<Trends />} />
-          </Route>
-          <Route path='favorites'>
-            <Route index element={<Favorites />} />
-          </Route>
-          <Route path='settings'>
-            <Route index element={<Settings />} />
-          </Route>
-        </Route>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='film/:imdbID' element={<SingleFilm />} />
-        </Route>
-        <Route path='singin' element={<SingInPage />} />
-        <Route path='/resetpassword' element={<ResetPasswordPage />} />
+    <UserContext.Provider value={user}>
+      <ThemeContext.Provider value={theme}>
+        <BrowserRouter>
+          <Routes>
+            {/* <Route element={<PrivateRoute />}> */}
+            <Route path='trends'>
+              <Route index element={<TrendsPage />} />
+            </Route>
+            <Route path='favorites'>
+              <Route index element={<Favourites />} />
+            </Route>
+            <Route path='settings'>
+              <Route index element={<Settings />} />
+            </Route>
+            {/* </Route> */}
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path='film/:imdbID' element={<SingleFilm />} />
+            </Route>
 
-        <Route path='/singup' element={<SingUpPage />} />
+            <Route path='singin' element={<SigninForm />} />
+            <Route path='singup' element={<SignupForm />} />
+            <Route path='/resetpassword' element={<ResetPassword />} />
 
-        <Route path='*' element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+            <Route path='*' element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeContext.Provider>
+    </UserContext.Provider>
   );
 }
 

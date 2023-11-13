@@ -1,7 +1,10 @@
+import { string } from 'yup';
+
 type Button = {
+  type: string;
   text: string;
   disabled?: boolean;
-  onClick: (...props: any) => any;
+  onClick: () => void;
 };
 
 export const Button = ({ text, disabled, onClick }: Button) => {

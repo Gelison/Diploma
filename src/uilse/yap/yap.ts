@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 import { AppErrors } from '../errors';
-``;
+
 export const LoginSchema = yup.object().shape({
   email: yup
     .string()
@@ -31,12 +31,12 @@ export const RegisterSchema = yup.object().shape({
     ),
   confirmPassword: yup
     .string()
+    .oneOf([yup.ref('password')], AppErrors.PasswordDoNotMatch)
     .min(8, AppErrors.minLength)
     .required(AppErrors.RequiredField)
     .matches(
       /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!@#$%&?]{6,20}$/,
       AppErrors.InvalidPassword
     ),
-  name: yup.string().required(AppErrors.RequiredField),
   username: yup.string().required(AppErrors.RequiredField),
 });

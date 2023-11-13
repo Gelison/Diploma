@@ -1,13 +1,16 @@
 import { useState } from 'react';
 
 import { SearchIcon } from '../../assets/index';
+// import { useDebounce } from '../../uilse/hooks/useDebounce';
 
 export const Search = () => {
   const [inputValue, setInputValue] = useState<string>('');
+  // const debounceValue = useDebounce(value, 1000);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
+
   console.log(inputValue);
 
   return (

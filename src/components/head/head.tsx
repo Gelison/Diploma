@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { logoLightIcon, Profil, SearchIcon } from '../../assets/index';
-import { User } from '../userName/userName';
+// import { User } from '../userName/userName';
 import { Search } from '../search/search';
 
 export const Head = () => {
@@ -17,7 +17,7 @@ export const Head = () => {
           <img src={Profil} alt='' className=' h-12 w-12' />
           <h3 className=' font-semibold mx-5 my-2'>Guest</h3>
           <div className='content-center flex'>
-            <User userName='Guest' />
+            {/* <User userName='Guest' /> */}
           </div>
         </div>
       </div>

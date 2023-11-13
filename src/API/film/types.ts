@@ -32,3 +32,17 @@ export type Films = {
   Year: string;
   imdbID: string;
 };
+
+export type Film = {
+  Title: string;
+  Poster: string;
+  Type: string;
+  imdbID: string;
+};
+export type FilmArr = {
+  Search: Film[];
+};
+export type Props = {
+  currentPage: number;
+  searchParams: URLSearchParams;
+};

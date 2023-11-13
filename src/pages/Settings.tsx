@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Button } from '../components/button/button';
 import { Switch } from '../components/Toggle/Toggle';
-import { useTheme } from '../uilse/hooks/useTheme';
 // import {} from '../../src/assets/index';
 
 export const Settings = () => {
@@ -58,11 +57,15 @@ export const Settings = () => {
           <div className=' bg-dark'>
             <p className=' text-secondary'>Dark</p>
             <p className=' text-secondary'>Use dark theme</p>
-            <Switch onClick={useTheme} />
           </div>
         </div>
       </div>
-      <Button text='Save' disabled={false} onClick={hendlePrimariButtonClick} />
+      <Button
+        type='button'
+        text='Save'
+        disabled={false}
+        onClick={hendlePrimariButtonClick}
+      />
 
       <Outlet />
     </div>
