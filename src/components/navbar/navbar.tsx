@@ -10,7 +10,7 @@ export function NavBar() {
   return (
     <>
       <div className='flex basis-auto text-secondary '>
-        <nav className={' flex-col flex space-y-6 '}>
+        <nav className=' flex-col flex space-y-6 '>
           <NavLink to='/' className={' hover:text-primary flex'}>
             <img src={HomeIcon} alt='' className=' w-6 h-6 ' />
             <h3 className='font-sans text-xl px-5'>Home</h3>
@@ -28,11 +28,7 @@ export function NavBar() {
             <img src={SettingsIcon} alt='' className=' w-6 h-6' />
             <h3 className='font-sans text-xl px-5'>Settings</h3>
           </NavLink>
-          <div>
-            <footer className=' font-sans text-xs'>
-              © All Rights Reserved
-            </footer>
-          </div>
+          <div></div>
         </nav>
       </div>
     </>

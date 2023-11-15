@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { NavBar } from '../navbar/navbar';
 import { Head } from '../head/head';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <div className='mx-14 my-10'>
@@ -17,4 +17,3 @@ const Layout = () => {
     </>
   );
 };
-export { Layout };

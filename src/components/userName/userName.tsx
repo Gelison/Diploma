@@ -1,8 +1,5 @@
-// import arrow from '../../assets/usernameAssets/Vector 1 (Stroke).svg';
 import { useEffect, useState } from 'react';
-// import profileRegister from '../../assets/usernameAssets/profilePicture.svg';
 import { useNavigate } from 'react-router-dom';
-import { useThemeContext } from '../../uilse/context/ThemContext';
 import { User } from '../../uilse/user';
 import { useUserContext } from '../../uilse/context/userContext';
 
@@ -12,7 +9,6 @@ type Props = {
 
 export function Username({ user }: Props) {
   const { changeUser } = useUserContext();
-  const { theme } = useThemeContext();
   const navigate = useNavigate();
   const words = user.username.split(' ');
   const initials = words.map((word) => word.charAt(0));
@@ -42,7 +38,7 @@ export function Username({ user }: Props) {
       password: '',
       films: [],
     });
-    navigate('/authorize');
+    navigate('/singin');
   };
 
   useEffect(() => {
@@ -91,7 +87,7 @@ export function Username({ user }: Props) {
               className=''
               onPointerEnter={handleFocus}
               onPointerLeave={handleDisfocus}
-              onClick={() => navigate('/authorize')}
+              onClick={() => navigate('/singin')}
             >
               Enter to the account
             </div>

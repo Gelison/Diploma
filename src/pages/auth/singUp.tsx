@@ -11,121 +11,153 @@ export const SignupForm = () => {
   return (
     <div className=' bg-myimg w-screen h-screen bg-center'>
       <div className=' w-screen h-screen backdrop-opacity-10 backdrop-invert bg-black/50  '>
-        <div className=' pt-12 pl-16'>
-          <img src={logoIcon} alt='' />
+        <div className=' pt-12 pl-16 cursor-pointer'>
+          <img src={logoIcon} alt='' onClick={() => navigate('/')} />
         </div>
-        <div className=' w-[474px] h-[440px] bg-dark rounded-lg flex items-center mx-auto my-10'>
-          <div className=' p-5 mx-auto'></div>
-          <Formik
-            initialValues={{
-              email: '',
-              password: '',
-              confirmPassword: '',
-              username: '',
-            }}
-            validateOnBlur
-            validationSchema={RegisterSchema}
-            onSubmit={(
-              values: IRegisterValues,
-              { setSubmitting }: FormikHelpers<IRegisterValues>
-            ) => {
-              setTimeout(() => {
-                console.log(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-              }, 500);
-            }}
-          >
-            {({
-              handleChange,
-              handleBlur,
-              touched,
-              values,
-              errors,
-              handleSubmit,
-              isValid,
-              dirty,
-            }) => (
-              <div>
-                <label htmlFor={`username`}>username</label>
-                <input
-                  className=' text-black'
-                  id='username'
-                  name='username'
-                  type='username'
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.username}
-                />
+        <div className=' w-[474px] h-[540px] bg-dark rounded-lg mx-auto my-3'>
+          <div className=''>
+            <h3 className=' text-2xl  ml-[75px] py-3'>Sing In</h3>
+            <form action='' className=' flex justify-center'>
+              <Formik
+                initialValues={{
+                  email: '',
+                  password: '',
+                  confirmPassword: '',
+                  username: '',
+                }}
+                validateOnBlur
+                validationSchema={RegisterSchema}
+                onSubmit={(
+                  values: IRegisterValues,
+                  { setSubmitting }: FormikHelpers<IRegisterValues>
+                ) => {
+                  setTimeout(() => {
+                    console.log(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                  }, 500);
+                }}
+              >
+                {({
+                  handleChange,
+                  handleBlur,
+                  touched,
+                  values,
+                  errors,
+                  handleSubmit,
+                  isValid,
+                  dirty,
+                }) => (
+                  <div className='flex flex-col '>
+                    <label htmlFor={`username`} className='flex flex-col py-2'>
+                      Name
+                    </label>
+                    <input
+                      className='bg-graphite w-80 h-10 rounded-md'
+                      id='username'
+                      name='username'
+                      type='username'
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.username}
+                    />
 
-                {errors.username && touched.username && (
-                  <span>{errors.username}</span>
-                )}
-                <div>
-                  <label htmlFor={`email`}>email</label>
-                  <input
-                    className=' text-black'
-                    id='email'
-                    name='email'
-                    type='email'
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                  />
-                </div>
-                {errors.email && touched.email && <span>{errors.email}</span>}
-                <div>
-                  <label htmlFor={`password`}>Password</label>
-                  <input
-                    className=' text-black'
-                    id='password'
-                    name='password'
-                    type='password'
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                  />
-                </div>
-                {errors.password && touched.password && (
-                  <span>{errors.password}</span>
-                )}
-                <div>
-                  <label htmlFor={`confirmPassword`}>Password</label>
-                  <input
-                    className=' text-black'
-                    id='confirmPassword'
-                    name='confirmPassword'
-                    type='password'
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.confirmPassword}
-                  />
-                </div>
-                {errors.confirmPassword && touched.confirmPassword && (
-                  <span>{errors.confirmPassword}</span>
-                )}
+                    {errors.username && touched.username && (
+                      <span className='text-red-600 text-xs'>
+                        {errors.username}
+                      </span>
+                    )}
+                    <div>
+                      <label htmlFor={`email`} className='flex flex-col py-2'>
+                        Email
+                      </label>
+                      <input
+                        className='bg-graphite w-80 h-10 rounded-md'
+                        id='email'
+                        name='email'
+                        type='email'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.email}
+                      />
+                    </div>
+                    {errors.email && touched.email && (
+                      <span className='text-red-600 text-xs'>
+                        {errors.email}
+                      </span>
+                    )}
+                    <div>
+                      <label
+                        htmlFor={`password`}
+                        className='flex flex-col py-2'
+                      >
+                        Password
+                      </label>
+                      <input
+                        className='bg-graphite w-80 h-10 rounded-md'
+                        id='password'
+                        name='password'
+                        type='password'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
+                      />
+                    </div>
+                    {errors.password && touched.password && (
+                      <span className='text-red-600 text-xs'>
+                        {errors.password}
+                      </span>
+                    )}
+                    <div>
+                      <label
+                        htmlFor={`confirmPassword`}
+                        className='flex flex-col py-2'
+                      >
+                        Confirm Password
+                      </label>
+                      <input
+                        className=' bg-graphite w-80 h-10 rounded-md'
+                        id='confirmPassword'
+                        name='confirmPassword'
+                        type='password'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.confirmPassword}
+                      />
+                    </div>
+                    {errors.confirmPassword && touched.confirmPassword && (
+                      <span className='text-red-600 text-xs'>
+                        {errors.confirmPassword}
+                      </span>
+                    )}
+                    <div className=' my-2'>
+                      <Button
+                        type={`submit`}
+                        text='Sing in'
+                        disabled={!isValid && !dirty}
+                        onClick={handleSubmit}
+                      />
 
-                <Button
-                  type={`submit`}
-                  text='Sing in'
-                  disabled={!isValid && !dirty}
-                  onClick={handleSubmit}
-                />
-
-                <div>
-                  Already have an account?
-                  <span
-                    className=' text-primary hover:text-primary2 cursor-pointer'
-                    onClick={() => navigate('/singup')}
-                  >
-                    Sign In
-                  </span>
-                </div>
-              </div>
-            )}
-          </Formik>
+                      <div className='text-xs flex justify-center my-3'>
+                        Already have an account?
+                        <span
+                          className=' text-primary hover:text-primary2 cursor-pointer px-1'
+                          onClick={() => navigate('/singin')}
+                        >
+                          Sign In
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </Formik>
+            </form>
+          </div>
         </div>
+
         <footer className='flex items-center mx-auto'>
-          <p className='flex items-center mx-auto'>© All Rights Reserved</p>
+          <p className='flex items-center mx-auto mt-4'>
+            © All Rights Reserved
+          </p>
         </footer>
       </div>
     </div>

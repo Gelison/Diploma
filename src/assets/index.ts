@@ -1,4 +1,3 @@
-// import { React } from 'react';
 import logoIcon from './icons/logo.svg';
 import logoLightIcon from './icons/logo-light.svg';
 import backgroundAuth from './background/background.png';

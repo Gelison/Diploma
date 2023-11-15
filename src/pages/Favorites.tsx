@@ -1,27 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NoFavourites } from '../components/NoFavourites/noFavourites';
 import { Film } from '../API/film/types';
-import FilmItem from '../components/FilmItem/FilmItem';
-import { useUserContext } from '../uilse/context/userContext';
-import { User } from '../uilse/user';
+import FilmItem from '../components/FilmItem/FimItem';
 
 export function Favourites() {
-  const [inputValue, setInputValue] = useState<string>('');
-  const navigate = useNavigate();
+  // const [inputValue, setInputValue] = useState<string>('');
+  // const navigate = useNavigate();
   const [films, setFilms] = useState<Film[]>([]);
-  const { user } = useUserContext();
-
-  useEffect(() => {
-    if (user) {
-      const data = localStorage.getItem(user.email);
-      if (data) {
-        const parsedData: User = JSON.parse(data);
-        setFilms((prevFilms) => [...prevFilms, ...parsedData.films]);
-      }
-    }
-    return;
-  }, []);
 
   return (
     <div className=''>
